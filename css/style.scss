@@ -1,0 +1,289 @@
+@import "./var";
+@import "./breakpoints";
+@import "./grid";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+//InfoNav
+.info-nav {
+  height: 52px;
+  background-color: $sec_color;
+  align-items: center;
+  font-size: 14px;
+  color: $text_color;
+  .address {
+    padding-right: 10px;
+    margin: 0 10px 0 5px;
+    border-right: 1px solid $text_color;
+    &:hover {
+      color: $main_color;
+      cursor: pointer;
+    }
+  }
+  .email {
+    margin-left: 5px;
+    &:hover {
+      color: $main_color;
+      cursor: pointer;
+    }
+  }
+}
+/////////////////
+
+//Navbar
+
+.hum_menu {
+  cursor: pointer;
+}
+.nav_content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+nav {
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      padding: 10px;
+      color: $main_color;
+      &:hover {
+        color: white;
+        background-color: $gold;
+        cursor: pointer;
+        a {
+          color: white;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $main_color;
+      }
+    }
+  }
+}
+.nav_inline {
+  nav {
+    ul {
+      display: flex;
+    }
+  }
+}
+.hero_img {
+  background: url("../assets/worldcup.jpg") no-repeat;
+  background-size: 100%;
+  z-index: -1;
+  width: 100%;
+  height: 45vh;
+  margin-top: -30px;
+  @include xs{
+    margin-top: -20px;
+  }
+  @include sm{
+    margin-top: -20px;
+  }
+  @include md {
+    height: 60vh;
+  }
+  @include lg {
+    height: 80vh;
+  }
+  .hero {
+    width: 100%;
+    height: 100%;
+    .hero_title {
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      padding-top: 130px;
+      @include md {
+        font-size: 2rem;
+        padding-top: 250px;
+      }
+      @include lg {
+        font-size: 3rem;
+        padding-top: 300px;
+      }
+      @include xl {
+        padding-top: 400px;
+      }
+    }
+    .hero_desc {
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: -20px;
+      @include xs{
+        font-size: 1rem;
+      }
+      @include md{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.floating_menu {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  z-index: 50;
+  margin-top: -150px;
+  @include md {
+    margin-top: -100px;
+  }
+  @include lg {
+    margin-top: -50px;
+  }
+  .float1 {
+    background-color: $b_blue;
+    height: 90px;
+    align-items: center;
+  }
+  .float2 {
+    background-color: $main_color;
+    height: 90px;
+    align-items: center;
+    &:hover {
+      .ball {
+        animation: bounce 0.5s ease-in-out infinite;
+      }
+    }
+    .ball {
+      margin-left: 5px;
+      transition: transform 0.25s ease-in-out;
+    }
+  }
+  .float3 {
+    background-color: $b_blue;
+    height: 90px;
+    align-items: center;
+  }
+  .float4 {
+    background-color: $d_blue;
+    height: 90px;
+    align-items: center;
+  }
+}
+
+.about{
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.aboutUs {
+  h1 {
+    color: $main_color;
+  }
+  h4,
+  p {
+    color: $text_color;
+  }
+}
+
+.about_btn {
+  button {
+    background-color: transparent;
+    width: 150px;
+    height: 40px;
+    border: 1px solid black;
+    &:hover {
+      background-color: $main_color;
+      border: white;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.awards_bg{
+    background-color: $sec_color;
+    padding: 50px 0;
+    margin-top: 20px;
+    .awards{
+        .awards_title{
+            color: $main_color;
+        }
+    }
+}
+
+.awards_card {
+    color: $text_color;
+  .award_img {
+    margin-top: 25px;
+  }
+}
+.awards_btn {
+    width: 100%;
+    button{
+      background-color: transparent;
+      width: 150px;
+      height: 40px;
+      border: 1px solid black;
+      &:hover {
+      background-color: $main_color;
+      border: white;
+      color: white;
+      cursor: pointer;
+      }
+    }
+}
+.players{
+    padding: 50px 0;
+    .players_title{
+        align-items: center;
+        .players_name{
+            h2{
+                color: $main_color;
+            }
+            h4{
+                color: $text_color;
+            }
+        }
+        .arrow{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .all_players{
+        .player_info{
+            .player_name{
+                color: $text_color;
+            }
+            &:hover{
+                .player_name{
+                color: $main_color;
+                }
+            }
+        }
+    }
+}
+
+.quote{
+    background-color: $d_blue;
+    color: $gold;
+    padding: 50px;
+}
+
+.footer{
+    background-color: $sec_color;
+    color: $text_color;
+    font-size: 0.7rem;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
